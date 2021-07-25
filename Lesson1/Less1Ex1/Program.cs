@@ -11,7 +11,6 @@ namespace Less1Ex1
             Алгоритм реализовать отдельно в функции согласно блок-схеме.
             Написать проверочный код в main функции .
             Код выложить на GitHub.
-
          */
 
         private static void Main(string[] args)
