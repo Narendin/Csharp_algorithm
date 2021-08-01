@@ -7,6 +7,11 @@ namespace Less1Ex1
     {
         private Node head;
 
+        public Node this[int index]
+        {
+            get { return GetNodeFromIndex(index); }
+        }
+
         public LinkedList(int value)
         {
             head = new Node { Value = value };
@@ -97,10 +102,10 @@ namespace Less1Ex1
 
         public void RemoveNode(Node node)
         {
+            if (node == null) throw new Exception("Попытка удаления несуществующего элемента списка");
             if (node.PrevNode == null)
             {
-                if (head.NextNode == null)
-                    throw new Exception("Из данного списка невозможно удалить последний элемент");
+                if (head.NextNode == null) throw new Exception("Из данного списка невозможно удалить последний элемент");
                 head = head.NextNode;
                 head.PrevNode = null;
                 return;
