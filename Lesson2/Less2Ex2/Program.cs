@@ -54,17 +54,17 @@ namespace Less2Ex2
         // ниже по факту код из методички
         private static int BinarySearch(int[] inputArray, int searchValue)
         {
-            int left = 0;
-            int right = inputArray.Length - 1;
-            while (left <= right)
+            int left = 0;                                   // O(1)
+            int right = inputArray.Length - 1;              // O(1)
+            while (left <= right)                           // O(30) - обоснование ниже
             {
                 int mid = (left + right) / 2;
-                if (searchValue == inputArray[mid])
-                {
-                    return mid;
-                }
-                else if (searchValue < inputArray[mid])
-                {
+                if (searchValue == inputArray[mid])         // Каждое сравнение мы либо выходим из цикла, либо сокращаем длину проверяемого массива на 1 и делим пополам;
+                {                                           // Свойство Length массива имеет тип int, то максимальный размер массива 2^31-1 элементов;
+                    return mid;                             // После первого деления получается (2^31 - 1 - 1) / 2 = (2^31 - 2) / 2 = 2^30 - 1
+                }                                           // По итогу деления мы просто уменьшили степень на единицу
+                else if (searchValue < inputArray[mid])     // Тогда в наихудшем варианте поиска пройдем цикл 30 раз, в результате чего останется 2^1 - 1 = 2 - 1 = 1 (искомое значение)
+                {                                           // Значит, если принять один проход цикла за O(1), асимптотическая сложность цикла равна O(30)
                     right = mid - 1;
                 }
                 else
@@ -72,7 +72,7 @@ namespace Less2Ex2
                     left = mid + 1;
                 }
             }
-            return -1;
+            return -1;                                      // O(1)
         }
-    }
+    }                                                       // Итого, асимптотическая сложность алгоритма равна O(33), что мжно записать как O(N) без особой погрещности
 }
