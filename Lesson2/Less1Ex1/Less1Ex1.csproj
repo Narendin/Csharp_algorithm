@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E3DFDF30-FDF5-401F-A94B-5FD5FCF92DC6}</ProjectGuid>
+    <ProjectGuid>{6D0BA69F-E6E0-432E-A40B-545EC0A9B969}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Less1Ex1</RootNamespace>
     <AssemblyName>Less1Ex1</AssemblyName>
@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ILinkedList.cs" />
+    <Compile Include="LinkedList.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
